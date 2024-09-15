@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+  </head>
+  <body id="container">
+    <div class="sidebar">
+      <img src="./menu-btn.svg" alt="" />
+      <h1>Todo Tracker</h1>
+      <ul>
+        <li><img src="./mail.svg" alt="" />View All</li>
+        <li>Inbox</li>
+        <li>Today</li>
+        <li>Week</li>
+        <li>Projects</li>
+        <li>Create Project</li>
+      </ul>
+    </div>
+    <div id="main">
+      <div id="header">
+        <label for="todo"></label>
+        <input type="text" id="todo" placeholder="Create a new todo" />
+        <button id="create">Create Todo</button>
+      </div>
+
+      <div id="results"></div>
+      <dialog id="modalForm">
+        <h2>Add New Todo</h2>
+        <form action="#">
+          <label for="task">Task:</label>
+          <input type="text" id="task" />
+          <label for="start">Start date:</label>
+
+          <input
+            <input
+            type="date"
+            id="start"
+            name="date"
+            value="2024-07-22"
+            min="2024-01-01"
+            max="2025-12-31"
+          />
+          <label for="date-end">Projected Finish Date:</label>
+          <input
+            <input
+            type="date"
+            id="date-end"
+            name="date-end"
+            value="2024-07-22"
+            min="2024-01-01"
+            max="2025-12-31"
+          />
+
+          <label for="project">Project:</label>
+          <select name="select" id="project">
+            <option value="example">Example Project</option>
+          </select>
+          <!-- <label for="priority">Priority:</label>
+          <input type="text" id="Priority" /> -->
+          <div>
+            <label for="html">Urgent Today</label>
+            <input type="radio" id="today" name="fav_language" value="Today" />
+            <label for="css">This Week</label>
+            <input type="radio" id="week" name="fav_language" value="Week" />
+            <label for="javascript">Later Today</label>
+            <input type="radio" id="later" name="fav_language" value="Later" />
+          </div>
+
+          <label for="notes">General Notes:</label>
+          <input
+            type="text"
+            id="notes"
+            placeholder="Type in your notes pertinent to this todo..."
+          />
+        </form>
+        <button id="add" type="submit">Add Book</button>
+        <button id="cancel">Cancel</button>
+      </dialog>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #410000;
+}
+
+#main {
+  flex: 1;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #410000;
+  color: #fff;
+  height: 100vh;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  border-right: 2px solid #000000;
+}
+
+/* #container {
+} */
+
+.menu-icon {
+  width: 46px;
+  cursor: pointer;
+  padding-right: 12px;
+  padding-left: 6px;
+  color: #fff;
+  padding-top: 20px;
+  background-color: #d1d1d1;
+  height: 100vh;
+}
+
+.toggle {
+  display: none;
+}
+
+.sidebar-btn {
+  /* Other button styles */
+  /* transition: transform 3.7s ease-in-out; Animation properties */
+}
+
+#header {
+  display: flex;
+  margin: 30px;
+}
+
+#header input {
+  flex: 1;
+  font-family: "Roboto-Light";
+  padding: 20px;
+  background-color: #ececec;
+  border-radius: 8px;
+  margin-right: 30px;
+  border: none;
+  font-size: 1em;
+  color: #424242;
+  outline: none;
+  border: 2px solid #000000;
+}
+
+#create {
+  background-color: #c7c7c7;
+  border-radius: 8px;
+  padding: 20px;
+  border: none;
+  color: #000000;
+  font-size: 1em;
+  font-weight: 600;
+  border: 2px solid #000000;
+}
+
+h1 {
+  padding: 20px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+ul li {
+  padding: 20px;
+  margin-right: auto;
+}
+
+li {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+}
+
+#modalForm {
+  /* Other styles... */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  padding: 40px;
+  width: min(90%, 500px);
+  border-radius: 8px;
+  outline: none;
+  background: #ececec;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+#modalForm input {
+  font-size: 1rem;
+  border: none;
+  background: #ffffff;
+  padding: 10px 10px;
+  border-radius: 8px;
+  font-family: "Roboto-Regular";
+  color: #424242;
+  width: 100%;
+  border: 1px solid #000000;
+}
+
+dialog h2 {
+  text-align: center;
+}
+
+#results {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#results div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(247, 247, 247);
+  width: 300px;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 10px;
+  border: 2px solid #000000;
+}
