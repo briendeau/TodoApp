@@ -35,7 +35,7 @@ myMenuImg.addEventListener("click", () => {
   sidebar.classList.toggle("toggle");
 });
 
-// create todo button
+// show modal when btn is clicked.
 const dialog = document.getElementById("modalForm");
 const createBtn = document.getElementById("create");
 createBtn.addEventListener("click", () => {
@@ -51,8 +51,10 @@ cancelBtn.addEventListener("click", () => {
 // add todo button inside modal
 const modalAddBtn = document.getElementById("add");
 modalAddBtn.addEventListener("click", () => {
+  const dialog = document.getElementById("modalForm");
   getInputCreateTodos();
   displayTodo(todoArr);
+  dialog.close();
 });
 
 // call create todo obj and display markup when addbtn is clicked.
@@ -79,9 +81,9 @@ function getInputCreateTodos() {
   console.log(dateEnd.value);
   let project = document.getElementById("project");
   console.log(project.value);
-  const urgency = document.querySelector('input[name="fav_language"]:checked');
-
+  let urgency = document.querySelector('input[name="fav_language"]:checked');
   console.log(urgency.value);
+
   let notes = document.getElementById("notes");
   console.log(notes.value);
   let todo = Todo(
@@ -102,18 +104,30 @@ function displayTodo(todoArr) {
   results.innerHTML = "";
   for (let todo of todoArr) {
     let card = document.createElement("div");
-    let h1 = document.createElement("h2");
-    // let h2 = document.createElement("h2");
-    let h3 = document.createElement("h2");
+    let task = document.createElement("h2");
+    let dateOne = document.createElement("h2");
+    let dateTwo = document.createElement("h2");
+    let project = document.createElement("h2");
+    let urgency = document.createElement("h2");
+    let notes = document.createElement("h2");
     let cardBtn = document.createElement("button");
-    // let toggleBtn = document.createElement("button");
-    cardBtn.textContent = "remove";
-    // toggleBtn.textContent = book.read === "yes" ? "Mark Unread" : "Mark Read";
-    h1.textContent = "Todo: " + todo.task;
 
+    cardBtn.textContent = "Delete todo";
+    // toggleBtn.textContent = book.read === "yes" ? "Mark Unread" : "Mark Read";
+    task.textContent = "Todo: " + todo.task;
+    dateOne.textContent = "Started: " + todo.start;
+    dateTwo.textContent = "Deadline: " + todo.dateEnd;
+    project.textContent = "Project: " + todo.project;
+    urgency.textContent = "Urgency: " + todo.urgency;
+    notes.textContent = "Notes: " + todo.notes;
+
+    card.appendChild(task);
+    card.appendChild(dateOne);
+    card.appendChild(dateTwo);
+    card.appendChild(project);
+    card.appendChild(urgency);
+    card.appendChild(notes);
     results.appendChild(card);
-    card.appendChild(h1);
-    card.appendChild(cardBtn);
 
     // remove the card inside the results div when the remove btn is clicked and remove it from the array.
     cardBtn.addEventListener("click", (e) => {
@@ -126,6 +140,38 @@ function displayTodo(todoArr) {
     });
   }
 }
+
+// project btn event listener, open modal, add value to select list for todo modal.
+const projBtn = document.querySelector(".proj-btn");
+console.log(projBtn);
+const projDialog = document.getElementById("projectForm");
+projBtn.addEventListener("click", () => {
+  projDialog.showModal();
+});
+
+const addProjBtn = document.getElementById("add-proj");
+addProjBtn.addEventListener("click", () => {
+  const projInput = document.getElementById("project");
+  let projectVal = projInput.value;
+
+  // add the project to the select list as an option element
+  let option = document.createElement("option");
+  option.value = projectVal;
+  let optionVal = option.value;
+  console.log(optionVal);
+  option.textContent = optionVal;
+  console.log(option);
+  let selectList = document.getElementById("projectSelect");
+  selectList.appendChild(option);
+
+  // also add the project to the sidebar list
+  const ulSidebar = document.getElementById("proj-list");
+  let li = document.createElement("li");
+  li.innerHTML = "&#128366; " + projectVal;
+  ulSidebar.appendChild(li);
+
+  projDialog.close();
+});
 
 // function displayTodo() {
 //   const resultEle = document.querySelector("#results");

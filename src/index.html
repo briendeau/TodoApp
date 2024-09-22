@@ -14,8 +14,11 @@
         <li>Inbox</li>
         <li>Today</li>
         <li>Week</li>
-        <li>Projects</li>
-        <li>Create Project</li>
+        <ul id="proj-list">
+          <li>&#128218; Projects</li>
+        </ul>
+
+        <li><button class="proj-btn">Create Project</button></li>
       </ul>
     </div>
     <div id="main">
@@ -23,13 +26,22 @@
         <label for="todo"></label>
         <input type="text" id="todo" placeholder="Create a new todo" />
         <button id="create">Create Todo</button>
+        <dialog id="projectForm">
+          <h2>Add a New Project:</h2>
+          <form action="#">
+            <label for="project">Project Name:</label>
+            <input type="text" id="project" />
+          </form>
+          <button id="add-proj" type="submit">Add Project</button>
+          <button id="cancel">Cancel</button>
+        </dialog>
       </div>
 
       <div id="results"></div>
       <dialog id="modalForm">
         <h2>Add New Todo</h2>
         <form action="#">
-          <label for="task">Task:</label>
+          <label for="task">Project Name:</label>
           <input type="text" id="task" />
           <label for="start">Start date:</label>
 
@@ -54,7 +66,7 @@
           />
 
           <label for="project">Project:</label>
-          <select name="select" id="project">
+          <select name="select" id="projectSelect">
             <option value="example">Example Project</option>
           </select>
           <!-- <label for="priority">Priority:</label>
@@ -75,7 +87,7 @@
             placeholder="Type in your notes pertinent to this todo..."
           />
         </form>
-        <button id="add" type="submit">Add Book</button>
+        <button id="add" type="submit">Add todo</button>
         <button id="cancel">Cancel</button>
       </dialog>
     </div>
