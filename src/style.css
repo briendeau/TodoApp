@@ -23,7 +23,8 @@ body {
 .sidebar {
   width: 300px;
   background-color: #676b7c;
-  color: #fff;
+  font-size: 1em;
+  color: #000000;
   height: 100vh;
   padding-top: 30px;
   display: flex;
@@ -31,6 +32,8 @@ body {
   align-items: start;
   justify-content: flex-start;
   border-right: 2px solid #000000;
+  border-left: 2px solid #000000;
+  font-weight: 600;
 }
 
 /* #container {
@@ -51,11 +54,23 @@ body {
   display: none;
 }
 
+#create {
+  transition: transform 0.7s ease-in-out;
+}
+#create:hover {
+  cursor: pointer;
+  transform: rotate(4deg);
+}
 .sidebar-btn {
   /* Other button styles */
   /* transition: transform 3.7s ease-in-out; Animation properties */
 }
 
+#banner {
+  text-align: center;
+  color: #000000;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
 #header {
   display: flex;
   margin: 30px;
@@ -90,13 +105,28 @@ h1 {
   padding: 20px;
 }
 
+h2 {
+  font-size: 1.2em;
+  padding: 2px;
+}
+
+/* .santa {
+  color: rgb(53, 53, 53);
+
+} */
 .proj-btn {
-  background-color: beige;
+  background-color: #d1d1d1;
   padding: 12px;
   border-radius: 4px;
   font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.7s ease-in-out;
 }
 
+.proj-btn:hover {
+  cursor: pointer;
+  transform: rotate(4deg);
+}
 ul {
   display: flex;
   flex-direction: column;
@@ -184,7 +214,6 @@ dialog h2 {
 #results div {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: rgb(247, 247, 247);
   width: 300px;
   padding: 12px;
